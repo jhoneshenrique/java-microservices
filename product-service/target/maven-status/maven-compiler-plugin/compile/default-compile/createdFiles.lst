@@ -1,0 +1,10 @@
+com/jhsoftware/productservice/model/Product$ProductBuilder.class
+com/jhsoftware/productservice/dto/ProductResponse$ProductResponseBuilder.class
+com/jhsoftware/productservice/dto/ProductRequest.class
+com/jhsoftware/productservice/model/Product.class
+com/jhsoftware/productservice/dto/ProductRequest$ProductRequestBuilder.class
+com/jhsoftware/productservice/dto/ProductResponse.class
+com/jhsoftware/productservice/service/ProductService.class
+com/jhsoftware/productservice/controller/ProductController.class
+com/jhsoftware/productservice/ProductServiceApplication.class
+com/jhsoftware/productservice/Repository/ProductRepository.class

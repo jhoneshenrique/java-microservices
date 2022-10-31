@@ -1,0 +1,7 @@
+/home/jhones/Documents/Java/microsservice-new/product-service/src/main/java/com/jhsoftware/productservice/controller/ProductController.java
+/home/jhones/Documents/Java/microsservice-new/product-service/src/main/java/com/jhsoftware/productservice/service/ProductService.java
+/home/jhones/Documents/Java/microsservice-new/product-service/src/main/java/com/jhsoftware/productservice/Repository/ProductRepository.java
+/home/jhones/Documents/Java/microsservice-new/product-service/src/main/java/com/jhsoftware/productservice/dto/ProductResponse.java
+/home/jhones/Documents/Java/microsservice-new/product-service/src/main/java/com/jhsoftware/productservice/dto/ProductRequest.java
+/home/jhones/Documents/Java/microsservice-new/product-service/src/main/java/com/jhsoftware/productservice/model/Product.java
+/home/jhones/Documents/Java/microsservice-new/product-service/src/main/java/com/jhsoftware/productservice/ProductServiceApplication.java
