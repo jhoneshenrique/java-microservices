@@ -17,6 +17,7 @@ public class InvenventoryService {
     @Transactional(readOnly = true)
     public List<InventoryResponse> isInStock(List<String> skuCode) {
 
+        //Converts the Inventory list which came from the db into a list of InventoryResponse
         return inventoryRepository.findBySkuCodeIn(skuCode).stream()
                 .map(inventory ->
                     InventoryResponse.builder().skucode(inventory.getSkuCode())
