@@ -1,5 +1,7 @@
 package com.jhsoftware.orderservice.service;
 
+import brave.Span;
+import brave.Tracer;
 import com.jhsoftware.orderservice.dto.InventoryResponse;
 import com.jhsoftware.orderservice.dto.OrderLineItemsDto;
 import com.jhsoftware.orderservice.dto.OrderRequest;
@@ -26,6 +28,9 @@ public class OrderService {
     //WebClient dependency injection
     private final WebClient.Builder webClientBuilder;
 
+    //Tracer depdency Injection
+    private final Tracer tracer;
+
     public String placeOrder(OrderRequest orderRequest){
         Order order = new Order();
         order.setOrderNumber(UUID.randomUUID().toString());
@@ -41,26 +46,35 @@ public class OrderService {
         //Get all the skucodes of the products
         List<String> skuCodes = order.getOrderLineItemsList().stream().map(OrderLineItems::getSkuCode).toList();
 
-        //Call Inventory service, and place order if product is in stock
-        InventoryResponse[] inventoryResponseArray = webClientBuilder.build().get()
-                .uri("http://inventory-service/api/inventory", uriBuilder -> uriBuilder
-                        .queryParam("skuCode", skuCodes).build())
-                .retrieve()
-                .bodyToMono(InventoryResponse[].class) //retrieve the body of the info.
-                .block(); //That tell us is a syncronous call.
+        //Creating a particular SpanID to be tarced.
+        Span inventoryServiceLookup = tracer.nextSpan().name("InventoryServiceLookup");
 
-        //Check if the items inside the array exists
-        boolean allProductsInStock = Arrays.stream(inventoryResponseArray).allMatch(InventoryResponse::isInStock);
+        try (Tracer.SpanInScope isLookup = tracer.withSpanInScope(inventoryServiceLookup.start())) {
 
-        if(allProductsInStock){
-            //Saving the order
-            orderRepository.save(order);
-            return "Order placed Successfully";
-        }else{
-            throw new IllegalArgumentException("Product is not in stock!");
+            inventoryServiceLookup.tag("call", "inventory-service");
+
+            // Call Inventory Service, and place order if product is in
+            // stock
+            InventoryResponse[] inventoryResponsArray = webClientBuilder.build().get()
+                    .uri("http://inventory-service/api/inventory",
+                            uriBuilder -> uriBuilder.queryParam("skuCode", skuCodes).build())
+                    .retrieve()
+                    .bodyToMono(InventoryResponse[].class)
+                    .block();
+
+            boolean allProductsInStock = Arrays.stream(inventoryResponsArray)
+                    .allMatch(InventoryResponse::isInStock);
+
+            if(allProductsInStock){
+                orderRepository.save(order);
+                return "Order Placed Successfully";
+            } else {
+                throw new IllegalArgumentException("Product is not in stock, please try again later");
+            }
+        } finally {
+            inventoryServiceLookup.flush();
         }
-
-
+        
     }
 
     private OrderLineItems mapToDto(OrderLineItemsDto orderLineItemsDto) {
