@@ -1,5 +1,6 @@
 /home/jhones/Documents/Java/microsservice-new/inventory-service/src/main/java/com/jhsoftware/invetoryservice/repository/InventoryRepository.java
 /home/jhones/Documents/Java/microsservice-new/inventory-service/src/main/java/com/jhsoftware/invetoryservice/InvetoryServiceApplication.java
+/home/jhones/Documents/Java/microsservice-new/inventory-service/src/main/java/com/jhsoftware/invetoryservice/dto/InventoryResponse.java
 /home/jhones/Documents/Java/microsservice-new/inventory-service/src/main/java/com/jhsoftware/invetoryservice/service/InvenventoryService.java
 /home/jhones/Documents/Java/microsservice-new/inventory-service/src/main/java/com/jhsoftware/invetoryservice/controller/InventoryController.java
 /home/jhones/Documents/Java/microsservice-new/inventory-service/src/main/java/com/jhsoftware/invetoryservice/model/Inventory.java

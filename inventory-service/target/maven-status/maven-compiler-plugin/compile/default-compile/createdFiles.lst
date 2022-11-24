@@ -1,5 +1,7 @@
+com/jhsoftware/invetoryservice/dto/InventoryResponse$InventoryResponseBuilder.class
 com/jhsoftware/invetoryservice/service/InvenventoryService.class
 com/jhsoftware/invetoryservice/controller/InventoryController.class
 com/jhsoftware/invetoryservice/repository/InventoryRepository.class
 com/jhsoftware/invetoryservice/InvetoryServiceApplication.class
 com/jhsoftware/invetoryservice/model/Inventory.class
+com/jhsoftware/invetoryservice/dto/InventoryResponse.class

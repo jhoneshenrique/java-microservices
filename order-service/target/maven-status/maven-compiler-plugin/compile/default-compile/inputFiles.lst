@@ -1,8 +1,11 @@
 /home/jhones/Documents/Java/microsservice-new/order-service/src/main/java/com/jhsoftware/orderservice/model/OrderLineItems.java
+/home/jhones/Documents/Java/microsservice-new/order-service/src/main/java/com/jhsoftware/orderservice/config/WebClientConfig.java
 /home/jhones/Documents/Java/microsservice-new/order-service/src/main/java/com/jhsoftware/orderservice/dto/OrderRequest.java
+/home/jhones/Documents/Java/microsservice-new/order-service/src/main/java/com/jhsoftware/orderservice/controller/OrderController.java
+/home/jhones/Documents/Java/microsservice-new/order-service/src/main/java/com/jhsoftware/orderservice/dto/InventoryResponse.java
 /home/jhones/Documents/Java/microsservice-new/order-service/src/main/java/com/jhsoftware/orderservice/dto/OrderLineItemsDto.java
 /home/jhones/Documents/Java/microsservice-new/order-service/src/main/java/com/jhsoftware/orderservice/model/Order.java
 /home/jhones/Documents/Java/microsservice-new/order-service/src/main/java/com/jhsoftware/orderservice/OrderServiceApplication.java
 /home/jhones/Documents/Java/microsservice-new/order-service/src/main/java/com/jhsoftware/orderservice/repository/OrderRepository.java
-/home/jhones/Documents/Java/microsservice-new/order-service/src/main/java/com/jhsoftware/orderservice/controller/Controller.java
 /home/jhones/Documents/Java/microsservice-new/order-service/src/main/java/com/jhsoftware/orderservice/service/OrderService.java
+/home/jhones/Documents/Java/microsservice-new/order-service/src/main/java/com/jhsoftware/orderservice/event/OrderPlacedEvent.java

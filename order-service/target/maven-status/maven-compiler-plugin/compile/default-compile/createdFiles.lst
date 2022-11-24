@@ -1,8 +1,12 @@
+com/jhsoftware/orderservice/event/OrderPlacedEvent.class
 com/jhsoftware/orderservice/model/OrderLineItems.class
-com/jhsoftware/orderservice/controller/Controller.class
-com/jhsoftware/orderservice/repository/OrderRepository.class
+com/jhsoftware/orderservice/config/WebClientConfig.class
+com/jhsoftware/orderservice/controller/OrderController.class
 com/jhsoftware/orderservice/service/OrderService.class
-com/jhsoftware/orderservice/dto/OrderRequest.class
 com/jhsoftware/orderservice/model/Order.class
+com/jhsoftware/orderservice/repository/OrderRepository.class
+com/jhsoftware/orderservice/dto/InventoryResponse.class
+com/jhsoftware/orderservice/dto/InventoryResponse$InventoryResponseBuilder.class
+com/jhsoftware/orderservice/dto/OrderRequest.class
 com/jhsoftware/orderservice/OrderServiceApplication.class
 com/jhsoftware/orderservice/dto/OrderLineItemsDto.class
